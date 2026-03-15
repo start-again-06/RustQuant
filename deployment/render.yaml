@@ -1,0 +1,32 @@
+services:
+
+  # Rust Backend API
+  - type: web
+    name: rustquant-backend
+    env: docker
+    plan: free
+    dockerfilePath: ./backend/Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: DATABASE_URL
+        value: postgres://user:password@db:5432/trading
+
+  # ML Prediction Service
+  - type: web
+    name: rustquant-ml-service
+    env: docker
+    plan: free
+    dockerfilePath: ./ml_service/Dockerfile
+    autoDeploy: true
+
+  # Frontend Dashboard
+  - type: static
+    name: rustquant-frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: frontend/out
+
+  # Data Pipeline Worker
+  - type: worker
+    name: rustquant-data-pipeline
+    env: docker
+    dockerfilePath: ./data_pipeline/Dockerfile
