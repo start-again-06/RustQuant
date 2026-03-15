@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+
+  backend:
+    build: ../backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  ml_service:
+    build: ../ml_service
+    ports:
+      - "5000:5000"
+
+  frontend:
+    build: ../frontend
+    ports:
+      - "3000:3000"
+
+  pipeline:
+    build: ../data_pipeline
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: trading
+      POSTGRES_PASSWORD: trading
+      POSTGRES_DB: trading
+    ports:
+      - "5432:5432"
