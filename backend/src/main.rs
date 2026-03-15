@@ -48,6 +48,15 @@ mod backtesting_engine {
     pub mod performance_metrics;
 }
 
+mod services {
+    pub mod auth_service;
+    pub mod market_service;
+    pub mod trading_service;
+    pub mod portfolio_service;
+    pub mod prediction_service;
+}
+
+
 #[tokio::main]
 async fn main() {
 
