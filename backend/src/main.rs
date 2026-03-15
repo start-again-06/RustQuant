@@ -41,6 +41,13 @@ mod risk_engine {
     pub mod var;
     pub mod drawdown;
 }
+
+mod backtesting_engine {
+    pub mod simulator;
+    pub mod strategy_runner;
+    pub mod performance_metrics;
+}
+
 #[tokio::main]
 async fn main() {
 
