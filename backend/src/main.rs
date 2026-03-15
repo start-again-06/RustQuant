@@ -23,6 +23,12 @@ mod market_data_engine {
     pub mod feature_engineering;
 }
 
+mod trading_engine {
+    pub mod signal_generator;
+    pub mod order_manager;
+    pub mod execution_engine;
+}
+
 #[tokio::main]
 async fn main() {
 
