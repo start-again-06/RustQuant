@@ -29,6 +29,13 @@ mod trading_engine {
     pub mod execution_engine;
 }
 
+mod portfolio_engine {
+    pub mod portfolio_manager;
+    pub mod risk_manager;
+    pub mod performance;
+}
+
+
 #[tokio::main]
 async fn main() {
 
