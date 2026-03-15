@@ -56,6 +56,12 @@ mod services {
     pub mod prediction_service;
 }
 
+mod db {
+    pub mod connection;
+    pub mod user_repository;
+    pub mod trade_repository;
+    pub mod portfolio_repository;
+}
 
 #[tokio::main]
 async fn main() {
