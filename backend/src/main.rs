@@ -17,6 +17,12 @@ mod utils {
     pub mod error_handler;
 }
 
+mod market_data_engine {
+    pub mod data_fetcher;
+    pub mod indicators;
+    pub mod feature_engineering;
+}
+
 #[tokio::main]
 async fn main() {
 
