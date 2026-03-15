@@ -35,7 +35,12 @@ mod portfolio_engine {
     pub mod performance;
 }
 
-
+mod risk_engine {
+    pub mod risk_manager;
+    pub mod position_limits;
+    pub mod var;
+    pub mod drawdown;
+}
 #[tokio::main]
 async fn main() {
 
