@@ -65,40 +65,23 @@ This architecture enables *independent development and scaling of each component
 
 ## Project Structure
 
+The repository is organized into modular components, each responsible for a specific part of the quantitative trading platform.
+
+```text
 RustQuant/
 │
-├── backend
-│   ├── api
-│   ├── trading_engine
-│   ├── portfolio_engine
-│   ├── risk_engine
-│   └── services
+├── backend/        # Core backend services and financial engines
 │
-├── data_pipeline
-│   ├── data_sources
-│   ├── ingestion
-│   ├── preprocessing
-│   ├── feature_engineering
-│   ├── storage
-│   └── streaming
+├── data_pipeline/  # Market data ingestion and feature engineering pipelines
 │
-├── ml_service
-│   ├── model_training
-│   ├── inference
-│   └── feature_processing
+├── ml_service/     # Machine learning models and prediction services
 │
-├── frontend
-│   ├── dashboard
-│   ├── charts
-│   └── api_client
+├── frontend/       # Dashboard interface for visualization and monitoring
 │
-├── deployment
-│   ├── docker
-│   ├── ci_cd
-│   ├── infrastructure
-│   └── monitoring
+├── deployment/     # Infrastructure configuration and deployment tooling
 │
-└── docs
+└── docs/           # Documentation and system design resources
+```
 
 ## Core Modules
 
